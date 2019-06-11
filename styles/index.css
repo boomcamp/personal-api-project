@@ -1,0 +1,84 @@
+/* .navigation{
+    position:fixed;
+    padding:15px;
+    background: #333;
+    z-index: 99;
+    color:#FFF;
+    font-family: 'Quicksand', sans-serif;
+ 
+} */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+ 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:  rgba(0, 0, 0, 0.3);; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #333; 
+  }
+
+.navigation{
+    background: #333;
+}
+
+.box-shadow{
+    -moz-box-shadow: 2px 4px 4px #1c1a1c;
+    -webkit-box-shadow: 2px 4px 4px #1c1a1c;
+    box-shadow: 2px 4px 4px #1c1a1c;
+}
+.stat-list{
+    padding:0;
+    list-style: none;
+}
+
+label{
+    font-weight: 500;
+}
+
+.header-content{
+    background: url("/img/wallpaper.jpg");
+    color:#FFF;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    -moz-box-shadow: -5px -3px 52px #1c1a1c;
+    -webkit-box-shadow: -5px -3px 52px #1c1a1c;
+    box-shadow: -5px -3px 52px #1c1a1c;
+
+}
+
+.heroes-container{
+  
+    
+}
+.heroes{
+   
+}
+
+.hero-card{
+   
+    margin:15px;
+}
+
+.hero-card:hover{
+    -moz-box-shadow: -5px 2px 33px #1c1a1c;
+    -webkit-box-shadow: -5px 2px 33px #1c1a1c;
+    box-shadow: -5px 2px 33px #1c1a1c;
+    padding:5px;
+    transition: 0.3s;
+}
+.nav-link{
+    color:#FFF;
+}
