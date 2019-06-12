@@ -7,8 +7,10 @@
     font-family: 'Quicksand', sans-serif;
  
 } */
+body{
+    background: #333;
+}
 
-/* width */
 ::-webkit-scrollbar {
     width: 10px;
   }
@@ -27,11 +29,11 @@
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #333; 
+    background: #222; 
   }
 
 .navigation{
-    background: #333;
+    background: #888;
 }
 
 .box-shadow{
@@ -49,7 +51,7 @@ label{
 }
 
 .header-content{
-    background: url("/img/wallpaper.jpg");
+    background: url("/img/attack_on_ancients__sfm___stand_alone__by_mugiwara_nero_d72dwtb.jpg");
     color:#FFF;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -64,12 +66,14 @@ label{
     
 }
 .heroes{
-   
+   color:#FFF;
 }
 
 .hero-card{
    
     margin:15px;
+    background: #444;
+    color:#FFF;
 }
 
 .hero-card:hover{
@@ -78,4 +82,51 @@ label{
     box-shadow: -5px 2px 33px #1c1a1c;
     padding:5px;
     transition: 0.3s;
+}
+
+.search-row{
+    color:#FFF;
+    
+    margin:5px
+}
+
+.row-title{
+    margin-left:15px;
+    color:whitesmoke
+}
+.modal-header{
+    background:#333;
+    border-color:#555;
+}
+.modal-body{
+    background:#444;
+    color:#FFF;
+}
+
+.modal-footer{
+    background:#333;
+    border-color:#555;
+}
+.card-list-group{
+    list-style: none;
+    padding:0;
+}
+
+
+.active{
+    border-bottom: solid 2px #CCC;
+}
+
+
+.live-content{
+    color:#FFF;
+    background: url("/img/live.gif");
+    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 400px;
+}
+.progress-bar{
+    color:#111;
+  
 }
