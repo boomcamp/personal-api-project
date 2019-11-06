@@ -63,16 +63,43 @@ a{
 }
 .third-body{
     margin-top: 50px;
+    display: flex;
 }
 .third-body img, .fourth-body img{
     border-radius: 10px;
     box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
 }
+.third-content-1{
+    margin-left: 20%;
+    margin-right: 5%;
+}
+.aside{
+    width: 200px;
+    margin-right: 1%;
+    animation:asidefade 2s
+}
+@keyframes asidefade{0%{opacity:0}100%{opacity:1}}
 .slideshow{
     margin: 20%;
-    margin-left: 30%;
+    margin:0 auto;
     display: none;
     width: 800px;
     animation:fading 10s infinite
 }
 @keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+.fade{
+    animation:fadingselected 2s
+}
+@keyframes fadingselected{0%{opacity:1}100%{opacity:0}}
+.remove{
+    border:none;
+    position: relative;
+    color: black;
+    font-size: 20px;
+    top: -140px;
+    right: -80px;
+}
+.fourth-body{
+    margin-top: 30%;
+    margin-bottom: 10%;
+}

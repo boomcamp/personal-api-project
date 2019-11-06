@@ -44,19 +44,23 @@ var arrayBuildings = [`https://picsum.photos/id/101/${dimensions}`,
 
 var imgdiv = document.querySelector('.images')
 var category = document.querySelector('.img-cat')
-var thirdbody = document.querySelector('.third-body')
+// var thirdbody = document.querySelector('.third-body')
+var thirdcontent1 = document.querySelector('.third-content-1')
+var thirdcontent2 = document.querySelector('.third-content-2')
 var fourthbody = document.querySelector('.fourth-body')
+var selectbtn = document.querySelector('.select-btn')
 var categories = ""
 var selectedimages = []
 
+img = document.createElement("img")
 function categoryImg(e){
     categories = e.options[e.selectedIndex].text
     for(var i=0;i<arrayNature.length;i++){
         var rand = Math.floor(Math.random()*Math.floor(i));
         if(categories === "Nature"){
-            thirdbody.innerHTML = '';
-            imgN = document.createElement("img")
-            imgN.setAttribute("src", arrayNature[rand])
+            thirdcontent1.innerHTML = '';
+            
+            img.setAttribute("src", arrayNature[rand])
 
             br = document.createElement("br")
             btn = document.createElement("button")
@@ -66,17 +70,16 @@ function categoryImg(e){
             btn.setAttribute('onclick', 'selectImg(btn)')
             btn.innerHTML = 'Select this Image'
 
-            thirdbody.append(imgN)
-            thirdbody.append(br)
-            thirdbody.append(btn)
+            thirdcontent1.append(img)
+            thirdcontent1.append(br)
+            thirdcontent1.append(btn)
         }   
     }
     for(var i=0;i<arrayPeople.length;i++){
         var rand = Math.floor(Math.random()*Math.floor(i));
         if(categories === "People"){
-            thirdbody.innerHTML = '';
-            imgP = document.createElement("img");
-            imgP.setAttribute("src", arrayPeople[rand])
+            thirdcontent1.innerHTML = '';
+            img.setAttribute("src", arrayPeople[rand])
 
             br = document.createElement("br")
             btn = document.createElement("button")
@@ -86,17 +89,16 @@ function categoryImg(e){
             btn.setAttribute('onclick', 'selectImg(btn)')
             btn.innerHTML = 'Select this Image'
 
-            thirdbody.append(imgP)
-            thirdbody.append(br)
-            thirdbody.append(btn)
+            thirdcontent1.append(img)
+            thirdcontent1.append(br)
+            thirdcontent1.append(btn)
         }
     }
     for(var i=0;i<arrayAnimals.length;i++){
         var rand = Math.floor(Math.random()*Math.floor(i));
         if(categories === "Animals"){
-            thirdbody.innerHTML = '';
-            imgA = document.createElement("img")
-            imgA.setAttribute("src", arrayAnimals[rand])
+            thirdcontent1.innerHTML = '';
+            img.setAttribute("src", arrayAnimals[rand])
 
             br = document.createElement("br")
             btn = document.createElement("button")
@@ -106,17 +108,16 @@ function categoryImg(e){
             btn.setAttribute('onclick', 'selectImg(btn)')
             btn.innerHTML = 'Select this Image'
 
-            thirdbody.append(imgA)
-            thirdbody.append(br)
-            thirdbody.append(btn)
+            thirdcontent1.append(img)
+            thirdcontent1.append(br)
+            thirdcontent1.append(btn)
         }
     }
     for(var i=0;i<arrayBuildings.length;i++){
         var rand = Math.floor(Math.random()*Math.floor(i));
         if(categories === "Buildings"){
-            thirdbody.innerHTML = '';
-            imgB = document.createElement("img")
-            imgB.setAttribute("src", arrayBuildings[rand])
+            thirdcontent1.innerHTML = '';
+            img.setAttribute("src", arrayBuildings[rand])
 
             br = document.createElement("br")
             btn = document.createElement("button")
@@ -126,46 +127,102 @@ function categoryImg(e){
             btn.setAttribute('onclick', 'selectImg(btn)')
             btn.innerHTML = 'Select this Image'
 
-            thirdbody.append(imgB)
-            thirdbody.append(br)
-            thirdbody.append(btn)
+            thirdcontent1.append(img)
+            thirdcontent1.append(br)
+            thirdcontent1.append(btn)
         }
     }
 }
 function selectImg(){
+    // console.log(selectedimages)
     var img_index = btn.value
     var array_select = btn.getAttribute('data-id')
+    var imgdiv = document.createElement('div')
     finalimgs = document.createElement('img')
+    asideimgs = document.createElement('img')
+    remove = document.createElement('button')
     finalimgs.setAttribute('class', 'slideshow')
+    asideimgs.setAttribute('class', 'aside')
+    imgdiv.setAttribute('class', 'aside_pane')
+    
+    remove.setAttribute('class', 'remove')
+    remove.setAttribute('onclick', 'removethis(this)')
+    remove.innerHTML = 'x'
+
     if(array_select === 'arrayNature'){
         selectedimages.push(arrayNature.splice(img_index, 1))
-        selectedimages.map((x,i) =>{finalimgs.setAttribute('src', selectedimages[i])})
+        selectedimages.map((x,i) =>{
+            finalimgs.setAttribute('src', selectedimages[i])
+            asideimgs.setAttribute('src', selectedimages[i])
+            finalimgs.setAttribute('id',`${i}`)
+        })
     }else if(array_select === 'arrayPeople'){
         selectedimages.push(arrayPeople.splice(img_index,1))
-        selectedimages.map((x,i) =>{finalimgs.setAttribute('src', selectedimages[i])})
+        selectedimages.map((x,i) =>{
+            finalimgs.setAttribute('src', selectedimages[i])
+            asideimgs.setAttribute('src', selectedimages[i])
+            finalimgs.setAttribute('id',`${i}`)
+        })
     }else if(array_select === 'arrayAnimals'){
         selectedimages.push(arrayAnimals.splice(img_index, 1))
-        selectedimages.map((x,i) =>{finalimgs.setAttribute('src', selectedimages[i])})
+        selectedimages.map((x,i) =>{
+            finalimgs.setAttribute('src', selectedimages[i])
+            asideimgs.setAttribute('src', selectedimages[i])
+            finalimgs.setAttribute('id',`${i}`)
+        })
     }else if(array_select === 'arrayBuildings'){
         selectedimages.push(arrayBuildings.splice(img_index, 1))
-        selectedimages.map((x,i) =>{finalimgs.setAttribute('src', selectedimages[i])})
+        selectedimages.map((x,i) =>{
+            finalimgs.setAttribute('src', selectedimages[i])
+            asideimgs.setAttribute('src', selectedimages[i])
+            finalimgs.setAttribute('id',`${i}`)
+        })
     }
     if(selectedimages.length <= 20){ // max of 20 images only to be used for slideshow
-        fourthbody.append(finalimgs);
+        fourthbody.append(finalimgs)
+        imgdiv.append(asideimgs)
+        imgdiv.append(remove)
+        thirdcontent2.append(imgdiv)
     }else{
         alert("Too Many Pictures")
     }
 }
-var myIndex = 0;
-function carousel() {
-    var x = document.getElementsByClassName("slideshow");
-    for(var i=0;i<x.length;i++){
-        x[i].style.display = "none";
-    }
-    myIndex++;
-    if(myIndex > x.lenght){
-        myIndex = 1;
-    }
-    x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 3000)
+
+function removethis(e){
+    e.parentNode.remove()
+    // console.log(selectedimages)
+    // console.log(asideimgs.src)
+    // console.log(selectedimages[0].includes(asideimgs.src))
+    selectedimages.map((x,i) => {
+        console.log(selectedimages.splice(selectedimages[i].indexOf(asideimgs.src), 1))
+        finalimgs.parentNode.removeChild(document.getElementById(`${i}`))
+        console.log(selectedimages[i])
+    })
+    var category = btn.getAttribute('data-id')
+    if(category === 'arrayNature'){
+        arrayNature.push(asideimgs.src)
+    }else if(category === 'arrayPeople'){
+        arrayPeople.push(asideimgs.src)
+    }else if(category === 'arrayAnimals'){
+        arrayAnimals.push(asideimgs.src)
+    }else if(category === 'arrayBuildings'){
+        arrayBuildings.push(asideimgs.src)
+    } 
 }
+
+selectbtn.addEventListener("click", function(){
+    var index = 0;
+    carousel()
+    function carousel() {
+        var x = document.getElementsByClassName("slideshow");
+        for(var i=0;i<x.length;i++){
+            x[i].style.display = "none";
+        }
+        index++;
+        if(index > x.lenght){
+            index = 1;
+        }
+        x[index-1].style.display = "block";
+        setTimeout(carousel, 3000)
+    }
+})
