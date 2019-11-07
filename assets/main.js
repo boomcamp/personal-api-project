@@ -33,8 +33,6 @@ optionbtn2.addEventListener('click', function(){
 })
 
 const request = "https://picsum.photos/500/600"
-
-console.log(dimensions)
 // I specify the contents myself by category because the API gives no category token
 function arrays_categories(dimensions){
     arrayNature = [`https://picsum.photos/id/1032/${dimensions}`,
@@ -134,8 +132,6 @@ function categoryImg(e){
         var rand = Math.floor(Math.random()*Math.floor(i));
         if(categories === "Nature"){
             thirdcontent1.innerHTML = '';
-            console.log(arrayNature)
-            console.log(dimensions)
             img.setAttribute("src", arrayNature[rand])
 
             br = document.createElement("br")
@@ -143,13 +139,13 @@ function categoryImg(e){
             btn.setAttribute('class', 'select-btn')
             btn.setAttribute('value', arrayNature.lastIndexOf(arrayNature[rand]))
             btn.setAttribute('data-id', 'arrayNature')
+            btn.setAttribute('id', 'disabled_after')
             btn.setAttribute('onclick', 'selectImg(btn)')
             btn.innerHTML = 'Select this Image'
 
             thirdcontent1.append(img)
             thirdcontent1.append(br)
             thirdcontent1.append(btn)
-    
         }   
     }
     for(var i=0;i<arrayPeople.length;i++){
@@ -163,6 +159,7 @@ function categoryImg(e){
             btn.setAttribute('class', 'select-btn')
             btn.setAttribute('value', arrayPeople.lastIndexOf(arrayPeople[rand]))
             btn.setAttribute('data-id', 'arrayPeople')
+            btn.setAttribute('id', 'disabled_after')
             btn.setAttribute('onclick', 'selectImg(btn)')
             btn.innerHTML = 'Select this Image'
 
@@ -182,6 +179,7 @@ function categoryImg(e){
             btn.setAttribute('class', 'select-btn')
             btn.setAttribute('value', arrayAnimals.lastIndexOf(arrayAnimals[rand]))
             btn.setAttribute('data-id', 'arrayAnimals')
+            btn.setAttribute('id', 'disabled_after')
             btn.setAttribute('onclick', 'selectImg(btn)')
             btn.innerHTML = 'Select this Image'
 
@@ -201,6 +199,7 @@ function categoryImg(e){
             btn.setAttribute('class', 'select-btn')
             btn.setAttribute('value', arrayBuildings.lastIndexOf(arrayBuildings[rand]))
             btn.setAttribute('data-id', 'arrayBuildings')
+            btn.setAttribute('id', 'disabled_after')
             btn.setAttribute('onclick', 'selectImg(btn)')
             btn.innerHTML = 'Select this Image'
 
@@ -211,7 +210,8 @@ function categoryImg(e){
     }
 }
 function selectImg(){
-    // console.log(selectedimages)
+    var btn = document.querySelector('#disabled_after')
+    btn.setAttribute('disabled', true)
     var img_index = btn.value
     var array_select = btn.getAttribute('data-id')
     var imgdiv = document.createElement('div')
@@ -268,10 +268,7 @@ function selectImg(){
         alert("Too Many Pictures")
     }
 }
-
 function removethis(e){
-    // console.log(document.getElementsByClassName("slideshow"))
-    // finalimgs = document.createElement('img')
     e.parentNode.remove()
     selectedimages.map((x,i) => {
         var splicedimg = selectedimages.splice(selectedimages[i].indexOf(asideimgs.src), 1)
