@@ -1,4 +1,4 @@
-## About the Project
+## About the Slideshow Generator
 This app contains images from public API that doesn't require an OAuth Key to access. From these images the only tokens that are available in manipulating the url is 'size: in i.e.(600/500) format which indicates length/width', 'grayscaled: i.e(600/500?grayscaled) which turns the image to black and white', 'blur: i.e.(600/500?blur)', 'random i.e(600/500?random=1)', 'mixed grayscaled and blur', 'webP format i.e.(600/500.webp)', '.jpg format' and 'v2/list'. However, the API doesnt give a token that specifies the categories of each images. I created an individual array for each categories by choosing the photos directly from its website and fetch its API and push it to its corresponding array category, say in this project, 'arrayNature[]', 'arrayPeople[]', 'arrayAnimals[]' and 'arrayBuildings[]'.
 
 ## Its Use

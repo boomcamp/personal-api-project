@@ -78,7 +78,46 @@ function arrays_categories(dimensions){
     `https://picsum.photos/id/1076/${dimensions}`,
     `https://picsum.photos/id/1081/${dimensions}`]
 }
-
+arrayNature = [`https://picsum.photos/id/1032/${dimensions}`,
+`https://picsum.photos/id/1037/${dimensions}`,
+`https://picsum.photos/id/10/${dimensions}`,
+`https://picsum.photos/id/1002/${dimensions}`,
+`https://picsum.photos/id/1015/${dimensions}`,
+`https://picsum.photos/id/1016/${dimensions}`,
+`https://picsum.photos/id/1019/${dimensions}`,
+`https://picsum.photos/id/1018/${dimensions}`,
+`https://picsum.photos/id/1021/${dimensions}`,
+`https://picsum.photos/id/1022/${dimensions}`]
+arrayPeople = [`https://picsum.photos/id/1001/${dimensions}`, 
+`https://picsum.photos/id/1005/${dimensions}`, 
+`https://picsum.photos/id/1006/${dimensions}`,
+`https://picsum.photos/id/1008/${dimensions}`,
+`https://picsum.photos/id/1004/${dimensions}`,
+`https://picsum.photos/id/1011/${dimensions}`,
+`https://picsum.photos/id/1012/${dimensions}`,
+`https://picsum.photos/id/1013/${dimensions}`,
+`https://picsum.photos/id/1014/${dimensions}`,
+`https://picsum.photos/id/1066/${dimensions}`]
+arrayAnimals = [`https://picsum.photos/id/1024/${dimensions}`,
+`https://picsum.photos/id/1062/${dimensions}`,
+`https://picsum.photos/id/1069/${dimensions}`,
+`https://picsum.photos/id/1074/${dimensions}`,
+`https://picsum.photos/id/1084/${dimensions}`,
+`https://picsum.photos/id/169/${dimensions}`,
+`https://picsum.photos/id/200/${dimensions}`,
+`https://picsum.photos/id/219/${dimensions}`,
+`https://picsum.photos/id/237/${dimensions}`,
+`https://picsum.photos/id/244/${dimensions}`]
+arrayBuildings = [`https://picsum.photos/id/101/${dimensions}`,
+`https://picsum.photos/id/1031/${dimensions}`,
+`https://picsum.photos/id/1029/${dimensions}`,
+`https://picsum.photos/id/1040/${dimensions}`,
+`https://picsum.photos/id/1048/${dimensions}`,
+`https://picsum.photos/id/1054/${dimensions}`,
+`https://picsum.photos/id/1067/${dimensions}`,
+`https://picsum.photos/id/1075/${dimensions}`,
+`https://picsum.photos/id/1076/${dimensions}`,
+`https://picsum.photos/id/1081/${dimensions}`]
 var imgdiv = document.querySelector('.images')
 var category = document.querySelector('.img-cat')
 var thirdcontent1 = document.querySelector('.third-content-1')
